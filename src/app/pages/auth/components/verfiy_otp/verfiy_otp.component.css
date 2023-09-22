@@ -1,0 +1,8 @@
+::ng-deep .otp-input {
+  font-family: 'bold_font' !important;
+  color: #642828 !important;
+}
+
+.border-left{
+  border-left: 3px solid #ebddc25c;
+}

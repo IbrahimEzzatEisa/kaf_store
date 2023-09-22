@@ -1,0 +1,91 @@
+<section class=" mb-4 mt-5">
+  <div class="container ">
+<div class="row justify-content-between" *ngIf="cart_List.length !=0 ; else other">
+  <div class="col-md-7 mb-2" >
+    <h5> {{'cart.shopping_cart'|translate }}  </h5>
+    <div class="row">
+  <div class="col-md-12 mb-3" *ngFor="let item of cart_List ; let i = index">
+    <div class="cart_item">
+      <div class="d-flex p-2 justify-content-between">
+        <div class="col-2 align-self-center">
+          <img [src]="item.main_image" (click)="details(item.id)" class="img-fluid mx-auto" style="width: 100%; height: auto;" >
+        </div>
+        <div class="col">
+          <h5> {{item.title}}</h5>
+          <h5>{{item.price}} {{'products_kaf.reyal'|translate }} </h5>
+          <p class="des"> {{item.small_description}}</p>
+          <p-inputNumber *ngIf="item.qty > 0" [(ngModel)]="item.qty" [showButtons]="true" buttonLayout="horizontal" inputId="horizontal" spinnerMode="horizontal" [min]="1"
+            decrementButtonClass="p-button-danger"
+            incrementButtonClass="p-button-success" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" [max]="item.quantity"
+            (onInput)="AddTocart($event, item)"></p-inputNumber>
+        </div>
+
+        <div class="col align-self-center">
+            <div class="price-dev text-end">
+                  <a class="mr-3 ml-3" (click)="deleteProduct(item.id , i)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.24999 2.5C9.24999 1.80965 9.80964 1.25 10.5 1.25H19.5C20.1904 1.25 20.75 1.80965 20.75 2.5C20.75 3.19035 20.1904 3.75 19.5 3.75H10.5C9.80964 3.75 9.24999 3.19035 9.24999 2.5ZM1.25 7C1.25 6.30964 1.80965 5.75 2.5 5.75H27.5C28.1904 5.75 28.75 6.30964 28.75 7C28.75 7.69035 28.1904 8.25 27.5 8.25H25.75V23C25.75 26.1904 23.1904 28.75 20 28.75H9.99999C6.7873 28.75 4.24999 26.1677 4.24999 22.875V8.25H2.5C1.80965 8.25 1.25 7.69035 1.25 7ZM6.74999 8.25V22.875C6.74999 24.8322 8.21269 26.25 9.99999 26.25H20C21.8096 26.25 23.25 24.8096 23.25 23V8.25H6.74999ZM11.625 11.5C12.3154 11.5 12.875 12.0596 12.875 12.75V21.875C12.875 22.5654 12.3154 23.125 11.625 23.125C10.9347 23.125 10.375 22.5654 10.375 21.875V12.75C10.375 12.0596 10.9347 11.5 11.625 11.5ZM18.375 11.5C19.0654 11.5 19.625 12.0596 19.625 12.75V21.875C19.625 22.5654 19.0654 23.125 18.375 23.125C17.6846 23.125 17.125 22.5654 17.125 21.875V12.75C17.125 12.0596 17.6846 11.5 18.375 11.5Z" fill="#831539"/>
+                </svg>
+              </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+  </div>
+  <div class="col-md-5">
+    <h5> {{'cart.Summary_of_your_cart'|translate }}</h5>
+    <div class="cart_item p-2">
+      <div class="d-flex justify-content-between">
+        <div>
+          <h6> {{'cart.Subtotal'|translate }}</h6>
+          <p class="des"> (  {{total_item | number: '1.2'}}  {{'cart.product'|translate }} )</p>
+        </div>
+        <div>
+          <h5> {{total | number: '1.2'}}  <strong> {{'products_kaf.reyal'|translate }}</strong></h5>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div>
+          <a  class=" btn btn-primary mr-5 ml-5" (click)="complete()" > {{'cart.complete_order'|translate }}</a>
+        </div>
+        <div>
+          <a  class=" btn btn-secondary mr-5 ml-5"(click)="goProducts()" > {{'menu.countine_shoping'|translate }} </a>
+        </div>
+      </div>
+</div>
+  </div>
+</div>
+<ng-template #other>
+<div class="row justify-content-center">
+<div class="col-md-12 text-center">
+    <svg width="341" height="341" viewBox="0 0 341 341" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_485_854)">
+      <path d="M282.235 293.938C299.655 290.965 311.366 274.433 308.393 257.013C305.419 239.593 288.887 227.882 271.467 230.855C254.047 233.829 242.336 250.361 245.31 267.781C248.283 285.201 264.816 296.912 282.235 293.938Z" fill="#ECDEC3"/>
+      <path d="M156.068 315.474C173.488 312.501 185.199 295.969 182.226 278.549C179.252 261.129 162.72 249.418 145.3 252.391C127.88 255.365 116.169 271.897 119.143 289.317C122.116 306.737 138.649 318.448 156.068 315.474Z" fill="#ECDEC3"/>
+      <path d="M296.878 46.931C295.449 45.7788 293.593 45.2965 291.783 45.6065L64.6828 84.3722C61.1987 84.9663 58.8555 88.2719 59.4496 91.756C59.522 92.18 59.6368 92.5962 59.793 92.9974L106.563 214.857C107.664 217.692 110.609 219.36 113.606 218.848C113.887 218.819 114.165 218.772 114.439 218.706L299.382 161.168C302.16 160.303 304.005 157.673 303.872 154.766L299.26 51.6784C299.192 49.8258 298.323 48.094 296.878 46.931Z" fill="#7E2A2A"/>
+      <path d="M134.532 189.307C131.449 189.832 128.437 188.05 127.412 185.095L101.874 111.548C100.817 108.176 102.694 104.585 106.067 103.528C109.296 102.515 112.756 104.193 113.961 107.356L139.5 180.903C140.655 184.24 138.889 187.883 135.553 189.043C135.221 189.159 134.88 189.248 134.532 189.307Z" fill="#FAFAFA"/>
+      <path d="M164.997 177.614C161.725 178.185 158.56 176.16 157.709 172.95L139.555 104.635C138.636 101.222 140.659 97.7107 144.072 96.792C144.089 96.7873 144.105 96.7833 144.122 96.7786C147.538 95.8723 151.042 97.9078 151.948 101.324L170.102 169.639C171.008 173.056 168.973 176.559 165.557 177.466L165.556 177.466L164.997 177.614Z" fill="#FAFAFA"/>
+      <path d="M195.462 165.922C191.978 166.517 188.671 164.174 188.076 160.69L177.308 97.6074C176.714 94.1234 179.056 90.8167 182.54 90.222C186.024 89.6273 189.331 91.9697 189.925 95.4537L200.694 158.537C201.288 162.021 198.946 165.327 195.462 165.922Z" fill="#FAFAFA"/>
+      <path d="M225.927 154.23L225.22 154.35C221.693 154.575 218.651 151.898 218.427 148.37C218.425 148.348 218.424 148.326 218.423 148.304L215.04 90.4523C214.857 86.9127 217.548 83.8813 221.084 83.6428C224.612 83.435 227.641 86.1261 227.849 89.6547L231.232 147.507C231.445 150.775 229.155 153.676 225.927 154.23Z" fill="#FAFAFA"/>
+      <path d="M256.392 142.537C252.908 143.13 249.603 140.787 249.008 137.303C248.921 136.789 248.897 136.266 248.936 135.746L252.938 83.126C253.122 79.5966 256.133 76.8848 259.663 77.0694C263.192 77.2539 265.904 80.2651 265.719 83.7944C265.714 83.8933 265.707 83.992 265.697 84.0904L261.695 136.711C261.474 139.639 259.287 142.042 256.392 142.537Z" fill="#FAFAFA"/>
+      <path d="M294.547 213.931L148.937 238.786C127.9 242.327 107.273 230.585 99.5787 210.686L42.5856 62.1752L9.90854 67.7531C6.42456 68.3478 3.11785 66.0054 2.52315 62.5214C1.92844 59.0375 4.27085 55.7307 7.75483 55.136L45.6049 48.6751C48.6032 48.1627 51.5472 49.8312 52.6483 52.6663L111.531 206.088C117.022 220.303 131.756 228.696 146.784 226.169L292.393 201.314C295.877 200.719 299.184 203.061 299.778 206.545C300.373 210.029 298.031 213.336 294.547 213.931Z" fill="#ECDEC3"/>
+      </g>
+      <defs>
+      <clipPath id="clip0_485_854">
+      <rect width="294.386" height="294.386" fill="white" transform="translate(0.369141 49.9023) rotate(-9.68691)"/>
+      </clipPath>
+      </defs>
+      </svg>
+         <h2>   {{'cart.there_is_nothing_in_the_shopping_cart'|translate }}  </h2>
+      <a  class=" btn btn-primary mr-5 ml-5 mt-5"(click)="goProducts()" > {{'menu.countine_shoping'|translate }} </a>
+</div>
+
+</div>
+</ng-template>
+
+  </div>
+
+</section>

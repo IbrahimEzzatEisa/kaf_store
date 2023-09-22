@@ -1,0 +1,23 @@
+
+<section class="mt-3 ">
+  <div class="container-fluid ">
+    <div class="row justify-content-between p-1">
+      <div class="col-md-7 align-self-center">
+        <h3>{{about.title}}</h3>
+        <p class="mb-3"> {{about.small_content}}</p>
+        <br>
+        <p [innerHTML]="about.big_content"> </p>
+      </div>
+      <div class="col-md-4  align-self-center d-xs-none d-lg-block" >
+     <img [src]="about.image" class="img-fluid mx-auto" >
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+
+  p {
+    font-size: 20px;
+  }
+</style>

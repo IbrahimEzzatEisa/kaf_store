@@ -1,0 +1,13 @@
+::ng-deep .ant-switch-checked {
+  background: #831539 !important;
+}
+:host ::ng-deep .ant-radio-checked .ant-radio-inner {
+  border-color: #831539 !important;
+  &::after {
+    background-color: #831539 !important;
+  }
+}
+
+::ng-deep .ant-radio-group {
+  display: inline !important;
+}

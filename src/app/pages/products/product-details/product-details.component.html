@@ -1,0 +1,145 @@
+
+<section class="mb-5">
+  <nz-spin [nzSpinning]="isSpinning">
+  <div class="container justify-content-center">
+    <div class="row mb-2">
+         <div class="col-md-4 align-self-center">
+        <div class="card mt-5 text-center">
+          <p class="like" (click)="AddLike(product_Details.id)" *ngIf="product_Details.is_fav == 0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 42 42" fill="none">
+              <path d="M28.525 6.125C25.55 6.125 22.925 7.32876 21 9.56431C19.075 7.32876 16.45 6.125 13.475 6.125C8.05 6.125 3.5 10.5961 3.5 15.927C3.5 16.271 3.5 16.6149 3.5 16.9588C4.2 25.0411 12.95 31.7478 18.025 35.0152C18.9 35.5311 19.95 35.875 21 35.875C22.05 35.875 23.1 35.5311 23.975 35.0152C29.05 31.7478 37.8 25.0411 38.5 17.1308C38.5 16.7869 38.5 16.4429 38.5 16.099C38.5 10.5961 33.95 6.125 28.525 6.125ZM35 16.6149C34.475 23.4936 25.725 29.6842 22.05 31.9198C21.35 32.2637 20.65 32.2637 19.95 31.9198C16.275 29.5124 7.7 23.3216 7 16.4429C7 16.4429 7 16.099 7 15.927C7 12.4877 9.975 9.56431 13.475 9.56431C16.1 9.56431 18.375 11.112 19.425 13.3475C19.6 14.0354 20.3 14.3793 21 14.3793C21.7 14.3793 22.4 14.0354 22.575 13.3475C23.625 11.112 25.9 9.56431 28.525 9.56431C32.025 9.56431 35 12.4877 35 15.927C35 16.099 35 16.4429 35 16.6149Z" fill="#706763"/>
+            </svg>
+          </p>
+
+          <p class="like" (click)="removeLike(product_Details.id)" *ngIf="product_Details.is_fav == 1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 42 42" fill="none">
+              <path d="M28.525 6.125C25.55 6.125 22.925 7.32876 21 9.56431C19.075 7.32876 16.45 6.125 13.475 6.125C8.05 6.125 3.5 10.5961 3.5 15.927C3.5 16.271 3.5 16.6149 3.5 16.9588C4.2 25.0411 12.95 31.7478 18.025 35.0152C18.9 35.5311 19.95 35.875 21 35.875C22.05 35.875 23.1 35.5311 23.975 35.0152C29.05 31.7478 37.8 25.0411 38.5 17.1308C38.5 16.7869 38.5 16.4429 38.5 16.099C38.5 10.5961 33.95 6.125 28.525 6.125ZM35 16.6149C34.475 23.4936 25.725 29.6842 22.05 31.9198C21.35 32.2637 20.65 32.2637 19.95 31.9198C16.275 29.5124 7.7 23.3216 7 16.4429C7 16.4429 7 16.099 7 15.927C7 12.4877 9.975 9.56431 13.475 9.56431C16.1 9.56431 18.375 11.112 19.425 13.3475C19.6 14.0354 20.3 14.3793 21 14.3793C21.7 14.3793 22.4 14.0354 22.575 13.3475C23.625 11.112 25.9 9.56431 28.525 9.56431C32.025 9.56431 35 12.4877 35 15.927C35 16.099 35 16.4429 35 16.6149Z" fill="#706763"/>
+            </svg>
+          </p>
+          <img class="mx-auto  p-5" [src]="mainImage" style="height: 300px;">
+        </div>
+         <div class="row p-2">
+          <div class="img-related  ml-3 mr-2"  >
+            <img class="mx-auto" [src]="product_Details.main_image" (click)="dispalyImage(product_Details.main_image)">
+          </div>
+          <div class="img-related" *ngFor="let img of product_Details.images" >
+            <img class="mx-auto" [src]="img.image" (click)="dispalyImage(img.image)">
+          </div>
+         </div>
+      </div>
+
+      <div class="col-md-5  mt-5">
+        <h5> {{product_Details.title}}</h5>
+        <P> {{product_Details.small_description}} </P>
+        <div class="price-dev d-flex "  *ngIf="product_Details.quantity  != 0">
+          <h3 class="price  mr-3 ml-3"> {{product_Details.price}} {{'products_kaf.reyal'|translate }}</h3>
+          <h3 class="old-price mr-3 ml-3" *ngIf="product_Details.old_price !=0"> {{product_Details.old_price}}  {{'products_kaf.reyal'|translate }}</h3>
+        </div>
+
+
+        <div class="mx-auro" *ngIf="product_Details.quantity  != 0">
+          <button class="btn btn-primary" (click)="AddFirst(product_Details)" *ngIf="!product_Details.qty"> <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M20.3498 4.7665C19.8915 4.2165 19.2498 3.84984 18.5165 3.84984H7.69984C7.14984 3.84984 6.78317 4.2165 6.78317 4.7665C6.78317 5.3165 7.14984 5.68317 7.69984 5.68317H18.4248C18.6082 5.68317 18.7915 5.77484 18.7915 5.8665C18.8832 6.04984 18.9748 6.23317 18.8832 6.4165L17.5998 12.0082C17.4165 12.9248 16.5915 13.5665 15.6748 13.5665H9.80817C8.8915 13.5665 8.15817 13.0165 7.88317 12.0998L7.14984 9.80817L5.22484 3.48317C4.7665 1.92484 3.3915 0.916504 1.83317 0.916504C1.28317 0.916504 0.916504 1.28317 0.916504 1.83317C0.916504 2.38317 1.28317 2.74984 1.83317 2.74984C2.5665 2.74984 3.29984 3.29984 3.48317 4.03317L4.12484 6.1415L6.1415 12.6498C6.59984 14.2998 8.0665 15.3998 9.80817 15.3998H15.8582C17.6915 15.3998 19.1582 14.1165 19.6165 12.3748L20.8998 6.78317C20.9915 6.1415 20.8082 5.40817 20.3498 4.7665Z" fill="white"/>
+            <path d="M9.07523 16.3164C7.79189 16.3164 6.69189 17.4164 6.69189 18.6997C6.69189 19.9831 7.79189 21.0831 9.07523 21.0831C10.3585 21.0831 11.4585 19.9831 11.4585 18.6997C11.4585 17.4164 10.3585 16.3164 9.07523 16.3164ZM9.07523 19.2497C8.80023 19.2497 8.52523 18.9747 8.52523 18.6997C8.52523 18.4247 8.80023 18.1497 9.07523 18.1497C9.35018 18.1497 9.62518 18.4247 9.62518 18.6997C9.62518 18.9747 9.35018 19.2497 9.07523 19.2497Z" fill="white"/>
+            <path d="M16.3164 16.3164C15.0331 16.3164 13.9331 17.4164 13.9331 18.6997C13.9331 19.9831 15.0331 21.0831 16.3164 21.0831C17.5998 21.0831 18.6998 19.9831 18.6998 18.6997C18.6998 17.4164 17.5998 16.3164 16.3164 16.3164ZM16.3164 19.2497C16.0414 19.2497 15.7664 18.9747 15.7664 18.6997C15.7664 18.4247 16.0414 18.1497 16.3164 18.1497C16.5914 18.1497 16.8664 18.4247 16.8664 18.6997C16.8664 18.9747 16.5914 19.2497 16.3164 19.2497Z" fill="white"/>
+            <path d="M12.8335 7.3335L12.8335 11.0002" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M14.6665 9.1665L10.9998 9.1665" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </span> {{'products_kaf.Add_cart'|translate }}
+      </button>
+
+
+      <p-inputNumber *ngIf="product_Details.qty > 0" [(ngModel)]="product_Details.qty" [showButtons]="true" buttonLayout="horizontal" inputId="horizontal" spinnerMode="horizontal" [min]="0"
+       decrementButtonClass="p-button-danger"
+       incrementButtonClass="p-button-success" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" [max]="product_Details.quantity"
+       (onInput)="AddTocart($event, product_Details)"></p-inputNumber>
+
+      </div>
+      <div class="text-end"  *ngIf="product_Details.quantity  <= 0 || product_Details.qty > product_Details.quantity">
+        <span class="text-danger"> {{'products_kaf.not_found_now'|translate }} </span>
+        <br>
+        <button class="btn btn-secondary" (click)="Notify(product_Details.id)" > <span>
+         <i class="fas fa-bell"></i>
+          </span> {{'products_kaf.notify_me'|translate }}
+         </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row  mt-5 mb-3">
+      <div class="col-md-12">
+      <p-tabView>
+        <p-tabPanel header=" {{'products_kaf.product_info'|translate }} ">
+            <p [innerHTML]="product_Details.description">
+            </p>
+           </p-tabPanel>
+           </p-tabView>
+            </div>
+     </div>
+
+
+    <div class="row mt-5 mb-5 justify-content-start" >
+      <h5> {{'products_kaf.related_product'|translate }} </h5>
+
+      <div class="col-md-3" *ngFor="let item of product_Details.simillar_products">
+          <div class="card  mb-3 text-center">
+            <p class="like" (click)="AddLike(item.id)" *ngIf="item.is_fav == 0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 42 42" fill="none">
+                <path d="M28.525 6.125C25.55 6.125 22.925 7.32876 21 9.56431C19.075 7.32876 16.45 6.125 13.475 6.125C8.05 6.125 3.5 10.5961 3.5 15.927C3.5 16.271 3.5 16.6149 3.5 16.9588C4.2 25.0411 12.95 31.7478 18.025 35.0152C18.9 35.5311 19.95 35.875 21 35.875C22.05 35.875 23.1 35.5311 23.975 35.0152C29.05 31.7478 37.8 25.0411 38.5 17.1308C38.5 16.7869 38.5 16.4429 38.5 16.099C38.5 10.5961 33.95 6.125 28.525 6.125ZM35 16.6149C34.475 23.4936 25.725 29.6842 22.05 31.9198C21.35 32.2637 20.65 32.2637 19.95 31.9198C16.275 29.5124 7.7 23.3216 7 16.4429C7 16.4429 7 16.099 7 15.927C7 12.4877 9.975 9.56431 13.475 9.56431C16.1 9.56431 18.375 11.112 19.425 13.3475C19.6 14.0354 20.3 14.3793 21 14.3793C21.7 14.3793 22.4 14.0354 22.575 13.3475C23.625 11.112 25.9 9.56431 28.525 9.56431C32.025 9.56431 35 12.4877 35 15.927C35 16.099 35 16.4429 35 16.6149Z" fill="#706763"/>
+              </svg>
+            </p>
+
+            <p class="like" (click)="removeLike(item.id)" *ngIf="item.is_fav == 1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M9.50016 4.99984C11 4.99975 12.3335 6.16651 12.0002 6.99984C12.1668 6.99984 12.6 6.79989 13 6.00009C13.5 5.00034 16 4.99984 18 4.99984C20 4.99984 20.5 7.50009 21 9.00009C21.5 10.5001 18 14.5001 17 16.5001C16 18.5001 13 19.5001 12.5 19.0001C12 18.5001 8.00016 16.5001 6.00016 15.0001C4.00016 13.5001 3.50016 9.50009 4.00016 6.99984C4.50016 4.49959 8.00033 4.99994 9.50016 4.99984Z" fill="#831539"/>
+                <path d="M16.3 3.5C14.6 3.5 13.1 4.18786 12 5.46532C10.9 4.18786 9.4 3.5 7.7 3.5C4.6 3.5 2 6.05491 2 9.10116C2 9.29769 2 9.49422 2 9.69075C2.4 14.3092 7.4 18.1416 10.3 20.0087C10.8 20.3035 11.4 20.5 12 20.5C12.6 20.5 13.2 20.3035 13.7 20.0087C16.6 18.1416 21.6 14.3092 22 9.78902C22 9.59249 22 9.39595 22 9.19942C22 6.05491 19.4 3.5 16.3 3.5ZM20 9.49422C19.7 13.4249 14.7 16.9624 12.6 18.2399C12.2 18.4364 11.8 18.4364 11.4 18.2399C9.3 16.8642 4.4 13.3266 4 9.39595C4 9.39595 4 9.19942 4 9.10116C4 7.13584 5.7 5.46532 7.7 5.46532C9.2 5.46532 10.5 6.34971 11.1 7.62717C11.2 8.02023 11.6 8.21676 12 8.21676C12.4 8.21676 12.8 8.02023 12.9 7.62717C13.5 6.34971 14.8 5.46532 16.3 5.46532C18.3 5.46532 20 7.13584 20 9.10116C20 9.19942 20 9.39595 20 9.49422Z" fill="#831539"/>
+              </svg>
+            </p>
+            <img class="mx-auto main_iamge"
+            [src]="item.main_image" (click)="details(item.id)"
+             style="width: 100%;">
+            <p class="lead mt-1"> {{item.title}}</p>
+            <p class="des"> {{item.small_description}}</p>
+            <div class="price-dev d-flex justify-content-center" *ngIf="item.quantity  > 0">
+              <a class="price"> {{item.price}} {{'products_kaf.reyal'|translate }} </a>
+              <a class="old-price" *ngIf="item.old_price != 0"> {{item.old_price}}  {{'products_kaf.reyal'|translate }}</a>
+            </div>
+            <div class="mx-auto mb-3" *ngIf="item.quantity >0">
+              <button class="btn btn-primary" (click)="AddFirst(item)" *ngIf="!item.qty"> <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M20.3498 4.7665C19.8915 4.2165 19.2498 3.84984 18.5165 3.84984H7.69984C7.14984 3.84984 6.78317 4.2165 6.78317 4.7665C6.78317 5.3165 7.14984 5.68317 7.69984 5.68317H18.4248C18.6082 5.68317 18.7915 5.77484 18.7915 5.8665C18.8832 6.04984 18.9748 6.23317 18.8832 6.4165L17.5998 12.0082C17.4165 12.9248 16.5915 13.5665 15.6748 13.5665H9.80817C8.8915 13.5665 8.15817 13.0165 7.88317 12.0998L7.14984 9.80817L5.22484 3.48317C4.7665 1.92484 3.3915 0.916504 1.83317 0.916504C1.28317 0.916504 0.916504 1.28317 0.916504 1.83317C0.916504 2.38317 1.28317 2.74984 1.83317 2.74984C2.5665 2.74984 3.29984 3.29984 3.48317 4.03317L4.12484 6.1415L6.1415 12.6498C6.59984 14.2998 8.0665 15.3998 9.80817 15.3998H15.8582C17.6915 15.3998 19.1582 14.1165 19.6165 12.3748L20.8998 6.78317C20.9915 6.1415 20.8082 5.40817 20.3498 4.7665Z" fill="white"/>
+                <path d="M9.07523 16.3164C7.79189 16.3164 6.69189 17.4164 6.69189 18.6997C6.69189 19.9831 7.79189 21.0831 9.07523 21.0831C10.3585 21.0831 11.4585 19.9831 11.4585 18.6997C11.4585 17.4164 10.3585 16.3164 9.07523 16.3164ZM9.07523 19.2497C8.80023 19.2497 8.52523 18.9747 8.52523 18.6997C8.52523 18.4247 8.80023 18.1497 9.07523 18.1497C9.35018 18.1497 9.62518 18.4247 9.62518 18.6997C9.62518 18.9747 9.35018 19.2497 9.07523 19.2497Z" fill="white"/>
+                <path d="M16.3164 16.3164C15.0331 16.3164 13.9331 17.4164 13.9331 18.6997C13.9331 19.9831 15.0331 21.0831 16.3164 21.0831C17.5998 21.0831 18.6998 19.9831 18.6998 18.6997C18.6998 17.4164 17.5998 16.3164 16.3164 16.3164ZM16.3164 19.2497C16.0414 19.2497 15.7664 18.9747 15.7664 18.6997C15.7664 18.4247 16.0414 18.1497 16.3164 18.1497C16.5914 18.1497 16.8664 18.4247 16.8664 18.6997C16.8664 18.9747 16.5914 19.2497 16.3164 19.2497Z" fill="white"/>
+                <path d="M12.8335 7.3335L12.8335 11.0002" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M14.6665 9.1665L10.9998 9.1665" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </span> {{'products_kaf.Add_cart'|translate }}
+          </button>
+
+          <p-inputNumber *ngIf="item.qty > 0" [(ngModel)]="item.qty" [showButtons]="true" buttonLayout="horizontal" inputId="horizontal"
+            spinnerMode="horizontal" [min]="0"
+           decrementButtonClass="p-button-danger"
+           incrementButtonClass="p-button-success" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"
+           [max]="item.quantity"
+           (onInput)="AddTocart($event, item )"></p-inputNumber>
+
+          </div>
+
+          <div class="text-center" *ngIf="item.quantity  <= 0 || item.qty > item.quantity">
+        <span class="text-danger"> {{'products_kaf.not_found_now'|translate }} </span>
+        <br>
+        <button class="btn btn-secondary" (click)="Notify(item.id)" > <span>
+          <i class="fas fa-bell"></i>
+           </span> {{'products_kaf.notify_me'|translate }}
+          </button>
+
+        </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  </nz-spin>
+</section>

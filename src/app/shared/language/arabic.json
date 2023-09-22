@@ -1,0 +1,15 @@
+{
+
+    "NavbarHome": "الصفحة الرئيسية",
+    "navbarCompany": "الشركة",
+    "NavbarServices": "الحلول",
+    "NavbarProjects": "المشاريع",
+    "NavbarPrtners": "شركاؤنا",
+    "NavbarNews": "الأخبار",
+    "NavbarContact": "تواصل معنا",
+    "navbar": [{
+        "AboutCompany": "عن الشركة",
+        "Router": ""
+    }]
+
+}

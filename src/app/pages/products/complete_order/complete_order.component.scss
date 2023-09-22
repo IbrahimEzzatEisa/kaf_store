@@ -1,0 +1,247 @@
+::ng-deep .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  height: 45px;
+  width: 100% !important;
+  border-radius: 8px;
+}
+
+::ng-deep .ant-select {
+  width: 100%;
+}
+
+.payment_radio {
+  border-radius:   8px;
+  border: 2px solid #949494;
+  background: #FFF;
+  min-height: 45px;
+  padding: 10px
+}
+
+.payment_radio_wallet {
+
+  border-radius:   8px;
+  border: 2px solid #831539;
+  height: 45px;
+  padding: 10px;
+  background: #831539;
+  color: white;
+}
+
+.Add_address {
+  margin-right: 10px;
+  margin-left: 10px;
+
+}
+
+.cart_item {
+  border-radius:   8px;
+  border: 2px solid #949494;
+  background: #FFF;
+}
+
+::ng-deep .ant-checkbox-checked .ant-checkbox-inner::after {
+  position: absolute;
+  display: table;
+  border: 2px solid #831539;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg) scale(1) translate(-50%, -50%);
+  opacity: 1;
+  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  content: ' ';
+}
+
+::ng-deep .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+
+
+/*Clearing Floats*/
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  zoom: 1;
+}
+
+/* Form wrapper styling */
+
+.search-wrapper {
+  border-radius: 8px;
+  background: transparent;
+}
+
+/* Form text input */
+
+.search-wrapper input {
+  padding-left: 20px;
+  height: 20px;
+  padding: 10px 5px;
+  float: left;
+  font: bold 13px 'lucida sans', 'trebuchet MS', 'Tahoma';
+  border: 0;
+  background: #fff;
+  border-radius: 40px;
+  border-top-style: none;
+}
+
+.search-wrapper input:focus {
+  outline: 0;
+  background: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
+}
+
+.search-wrapper input::-webkit-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+  padding-left: 20px;
+}
+
+.search-wrapper input:-moz-placeholder {
+
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.search-wrapper input:-ms-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+  border-style: none;
+}
+
+/* Form submit button */
+.search-wrapper button {
+  overflow: visible;
+  position: relative;
+  float: right;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 40px;
+  width: 110px;
+  font: 13px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+  color: #fff;
+  text-transform: uppercase;
+  background: #198cff;
+  border-radius: 40px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+}
+
+.search-wrapper button:hover {
+  /*     background: #e54040; */
+}
+
+.search-wrapper button:active,
+.search-wrapper button:focus {
+  background: #198cff;
+  outline: 0;
+}
+
+.search-wrapper button:focus:before,
+.search-wrapper button:active:before {
+  border-right-color: #c42f2f;
+}
+
+.search-wrapper button::-moz-focus-inner {
+  /* remove extra button spacing for Mozilla Firefox */
+  border: 0;
+  padding: 0;
+}
+
+:host ::ng-deep .ant-input-affix-wrapper {
+  position: relative;
+  color: rgba(0, 0, 0, .85);
+  font-size: 14px;
+  line-height: 1.5715;
+  background-image: none;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  display: inline-flex;
+  height: 45px;
+  border-radius: 8px;
+  width: 100%;
+  font-family: medium_font;
+  padding-left: 0;
+
+  .btn-primary {
+    margin-left: -5px !important;
+
+  }
+
+}
+
+:host ::ng-deep .ant-radio-checked .ant-radio-inner {
+  border-color: #831539;
+
+  &::after {
+    background-color: #831539;
+  }
+}
+
+::ng-deep .ant-radio-group {
+  display: inline !important;
+}
+
+.img_card {
+  margin-right: 20px;
+  margin-left: 20px;
+  display: inline-flex;
+}
+
+.btn.disabled,
+.btn:disabled,
+fieldset:disabled .btn {
+  color: var(--bs-btn-disabled-color);
+  pointer-events: none;
+  background-color: #831539;
+  border-color: #831539;
+  opacity: var(--bs-btn-disabled-opacity);
+}
+
+.notify {
+  color: #351f11;
+  font-family: 'bold_font';
+
+}
+
+.hide {
+  display: none;
+}
+
+a {
+  font-family: medium_font;
+
+}
+
+p {
+  font-size: 16px;
+  font-weight: 700;
+}
+::ng-deep .ant-spin-dot-item {
+  position: absolute;
+  display: block;
+  width: 9px;
+  height: 9px;
+  background-color: #841238;
+  border-radius: 100%;
+  transform: scale(0.75);
+  transform-origin: 50% 50%;
+  opacity: 0.3;
+  animation: antSpinMove 1s infinite linear alternate;
+}

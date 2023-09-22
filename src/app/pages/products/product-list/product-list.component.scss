@@ -1,0 +1,219 @@
+.category_list {
+  border-radius: 18px;
+  background: #ecdec3;
+}
+
+li {
+  color: #831539;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: start;
+  list-style: none;
+  cursor: pointer;
+}
+
+p {
+  color: #831539;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: start;
+  cursor: pointer;
+}
+
+.Active_id {
+  text-decoration-line: underline;
+  font-family: bold_font;
+  color: #831539;
+}
+
+::ng-deep p-inputnumber,
+.p-inputnumber {
+  display: inline-flex;
+  direction: ltr;
+}
+
+::ng-deep .p-button.p-button-success,
+.p-buttonset.p-button-success > .p-button,
+.p-splitbutton.p-button-success > .p-button {
+  color: #831539 !important;
+  background: white !important;
+  border: 1px solid #632727 !important;
+  height: 45px !important;
+}
+::ng-deep .p-button.p-button-danger,
+.p-buttonset.p-button-danger > .p-button,
+.p-splitbutton.p-button-danger > .p-button {
+  color: #831539 !important;
+  background: white !important;
+  border: 1px solid #632727 !important;
+  height: 45px !important;
+}
+
+::ng-deep .p-inputnumber-buttons-horizontal .p-inputnumber-input {
+  order: 2;
+  border-radius: 0;
+  width: 50px;
+}
+::ng-deep .p-inputtext {
+  border-color: #6d2c2c !important;
+  text-align: center;
+  font-family: bold_font;
+  color: #6d2c2c !important;
+  background-color: white !important;
+  border-radius: 0px !important;
+  width: 80px !important;
+  height: 45px;
+  box-shadow:none !important
+
+}
+::ng-deep .p-inputtext:enabled:hover {
+  border-color: #831539 !important;
+  box-shadow:none !important
+
+}
+::ng-deep .p-inputtext:enabled:focus {
+  border-color: #831539 !important;
+  box-shadow:none !important
+}
+::ng-deep .p-button.p-button-success:enabled:hover, .p-buttonset.p-button-success > .p-button:enabled:hover, .p-splitbutton.p-button-success > .p-button:enabled:hover {
+  border-color: #831539 !important;
+  box-shadow:none !important
+}
+
+::ng-deep .p-button.p-button-danger, .p-buttonset.p-button-danger  > .p-button , .p-splitbutton.p-button-danger  > .p-button  {
+  border-color: #831539 !important;
+  box-shadow:none !important
+}
+
+
+.des {
+  color: rgba(112, 103, 99, 0.8);
+  font-family: ligth;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+::ng-deep .ant-message-notice-content {
+  direction: ltr !important;
+  font-family: ligth;
+}
+
+.category{
+  .btn {
+    text-align: start !important;
+  }
+
+}
+
+::ng-deep  .ant-collapse-item:last-child > .ant-collapse-header {
+  background: #ecdec3 !important;
+  color: #831539 !important;
+  font-family: 'bold_font' !important;
+  text-align: center !important;
+  border-radius: 0px !important;
+  font-weight: 700 !important;
+  margin-top: 5px;
+  font-size: 20px;
+
+}
+
+::ng-deep .ant-collapse {
+  border: none;
+  background: #ecdec3 !important;
+  color: #831539 !important;
+  border-radius: 8px !important;
+  margin-right: 5px !important;
+
+  margin-left: 5px!important;
+  width: 100% !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px;
+
+
+}
+
+::ng-deep .ant-collapse-content {
+  background: #ecdec3 !important;
+  color: #831539 !important;
+  border-top: 0 !important;
+  width: 100%;
+}
+
+.text-active{
+  text-decoration-line: underline;
+  font-weight: 700;
+}
+
+
+  ::ng-deep .ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
+    display: inline-block;
+    margin-right: -12px;
+    font-size: 12px;
+    vertical-align: -1px;
+}
+
+
+
+.card {
+  min-height: 390px;
+  border-radius: 18px;
+  border: 1px solid rgba(112, 103, 99, 0.30);
+}
+
+.text-secondary{
+  color: #ecdec3 !important;
+    font-weight: 800;
+
+}
+
+.fa-bell{
+  color: #831539 !important;
+
+}
+
+.category{
+  background: #831539 !important;
+  border-radius: 8px;
+
+}
+
+::ng-deep .ant-collapse > .ant-collapse-item {
+  border: none !important;
+}
+
+::ng-deep .ant-spin-dot-item {
+  position: absolute;
+  display: block;
+  width: 9px;
+  height: 9px;
+  background-color: #841238;
+  border-radius: 100%;
+  transform: scale(0.75);
+  transform-origin: 50% 50%;
+  opacity: 0.3;
+  animation: antSpinMove 1s infinite linear alternate;
+}
+
+
+.main_iamge{
+  cursor: pointer;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+
+
+}
+::ng-deep .ant-collapse .ant-collapse-item-disabled > .ant-collapse-header, .ant-collapse .ant-collapse-item-disabled > .ant-collapse-header > .arrow {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.des{
+height: 20px !important;
+}

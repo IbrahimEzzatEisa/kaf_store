@@ -1,0 +1,20 @@
+<section class="mt-3 mb-4">
+  <div class="container">
+    <nz-spin [nzSpinning]="isSpinning">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h3 class="text-center mt-5 mb-5"> {{'menu.how_can_help_you'|translate }}</h3>
+          <h5 class="mt-5 mb-3">  {{'menu.question'|translate }}</h5>
+          <nz-collapse nzAccordion>
+            <nz-collapse-panel *ngFor="let panel of help_Center" [nzHeader]="panel.title">
+              <p>{{ panel.content }} </p>
+            </nz-collapse-panel>
+          </nz-collapse>
+
+        </div>
+      </div>
+    </nz-spin>
+  </div>
+</section>
+
+

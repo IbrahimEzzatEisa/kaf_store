@@ -1,0 +1,90 @@
+@import '../../../../shell/components/navbar/navbar.component.scss';
+
+
+
+
+  :host ::ng-deep .ant-input-affix-wrapper {
+    position: relative;
+    color: rgba(0,0,0,.85);
+    font-size: 14px;
+    line-height: 1.5715;
+    background-image: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    display: inline-flex;
+    height: 45px;
+    border-radius: 8px;
+    width: 100%;
+  }
+  .fa-search{
+      color: #831539;
+    }
+
+    .check_user{
+      color: #831539;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-decoration-line: underline;
+      font-family: 'medium_font';
+
+      }
+
+   .check_user strong{
+    font-family: 'medium_font';
+
+      }
+
+
+  ::ng-deep .p-inputtext {
+    font-size: 1rem;
+    color: #495057;
+    background: #f2f1f0;
+    padding: 0.75rem 0.75rem;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100% !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(54, 54, 54, 0.5);
+    background: white;
+    height: 45px;
+    text-align: center;
+  }
+  ::ng-deep .p-password {
+    position: relative;
+    display: inline-flex;
+    width: 100% !important;
+
+  }
+
+  ::ng-deep .p-inputtext{
+    width: 100% !important;
+  }
+  ::ng-deep .ant-input-affix-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-width: 0;
+    padding: 4px 11px;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    line-height: 1.5715;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    transition: all 0.3s;
+    display: inline-flex;
+    height: 45px;
+    border-radius: 8px;
+  }
+
+.invalid-feepassword_confirmationdback{
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: .875em;
+  color: var(--bs-form-invalid-color);
+
+}
+

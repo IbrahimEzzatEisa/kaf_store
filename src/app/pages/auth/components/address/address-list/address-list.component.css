@@ -1,0 +1,43 @@
+@import '../address-add/address-add.component.css';
+
+.btn-add {
+  border-radius: 100px;
+  background: rgba(84, 189, 119, 0.20);
+  width: 78px;
+  height: 21px;
+  color: #44AE4F;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 5px;
+  margin-right: 3px;
+  margin-left: 3px;
+
+
+}
+
+.btn-edit {
+  border-radius: 10px;
+  background: rgba(237, 77, 60, 0.20);
+  width: 78px;
+  height: 21px;
+  padding: 5px;
+  color: #F03C3C;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-right: 3px;
+  margin-left: 3px;
+
+
+}
+::ng-deep .ant-switch-disabled {
+  cursor: not-allowed;
+  opacity: 1 !important
+}
+
+.text_edit{
+
+}

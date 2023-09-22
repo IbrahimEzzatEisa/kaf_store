@@ -1,0 +1,18 @@
+@import '../product-list/product-list.component.scss';
+
+.cart_item{
+  border-radius: 18px;
+border: 2px solid #949494;
+background: #FFF;
+
+}
+.des{
+  text-align: start !important;
+}
+
+.text-end{
+  text-align: end !important;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+

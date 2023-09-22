@@ -1,0 +1,373 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: bold_font;
+  src: url("../src/assets/fonts/PingAR+LT-Bold.otf");
+}
+
+@font-face {
+  font-family: medium_font;
+  src: url("../src/assets/fonts/PingAR+LT-Medium.otf");
+}
+
+@font-face {
+  font-family: ligth;
+  src: url("../src/assets/fonts/PingAR+LT-Light.otf");
+}
+
+@font-face {
+  font-family: regular;
+  src: url("../src/assets/fonts/PingAR+LT-Regular.otf");
+}
+
+h3 {
+  font-family: bold_font;
+  color: #831539;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+p {
+  font-family: ligth;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+li {
+  color: #372012;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-family: ligth;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+ .nav-link.active,
+.nav-link.show {
+  color: #831539;
+  font-family: medium_font;
+}
+
+.lead {
+  color: #706763 !important;
+  font-family: medium_font !important;
+  text-align: center !important;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.price {
+  color: #831539 !important;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  font-family: bold_font;
+  text-align: center !important;
+}
+.old-price {
+  color: #831539 !important;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  font-family: ligth;
+  text-align: center !important;
+  text-decoration-line: line-through !important;
+}
+
+.btn-primary {
+  border-radius: 8px;
+  background: #831539;
+  font-family: ligth;
+  text-align: center !important;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  color: white;
+  border: none;
+  min-width: 140px;
+  height: 45px;
+  line-height: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
+
+  &:hover {
+    background: #642f2d !important;
+    color: white;
+  }
+  &:focus {
+    background: #642f2d !important;
+    color: white;
+  }
+}
+
+.btn-secondary {
+  border-radius: 8px;
+  background: #ecdec3 !important;
+  font-family: ligth;
+  text-align: center !important;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  color: #372012;
+  border: none;
+  min-width: 140px;
+  height: 45px;
+  line-height: 30px;
+
+  &:hover {
+    background: #ecdec38d !important;
+    color: #372012 !important;
+  }
+  &:focus {
+    background: #ecdec38d !important;
+    color: #372012 !important;
+
+  }
+}
+
+.like {
+  position: absolute;
+  left: 0;
+  margin: 5px;
+}
+
+h5 {
+  color: #831539;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.btn-outline-primary {
+  border-radius: 8px;
+  border: 1px solid #841238;
+  height: 45px;
+  width: 100%;
+  margin-bottom: 8px;
+  color: #363636;
+  font-family: ligth;
+  font-size: 14px;
+  &:hover {
+    background-color: transparent;
+    color: #363636;
+  }
+}
+
+.btn-block {
+  border-radius: 8px;
+  height: 45px;
+  width: 100%;
+}
+
+label {
+  color: #363636;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  font-family: medium_font;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #841238;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #841238;
+}
+
+.icon-navb {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 1px solid rgba(54, 54, 54, 0.5);
+    background: white;
+  min-height: 45px;
+}
+.form-label {
+  color: #363636;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+.contact_info {
+  background: #e4e4e4;
+}
+
+.media-body {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.form-control.is-invalid {
+  background: #7e2a2a33;
+  border: 1px solid #372012;
+}
+.invalid-feedback {
+  font-family: 'bold_font';
+
+}
+.invalid-feepassword_confirmationdback{
+  font-family: 'bold_font';
+  font-size: .875em;
+  color: var(--bs-form-invalid-color);
+  margin-top: 0.25rem;
+
+}
+
+h2{
+  font-family: bold_font;
+  color: #831539;
+  margin-bottom: 10px;
+}
+
+// input
+.form-control {
+  min-height: 45px;
+  border-radius: 10px;
+  border: 1px solid #e2e2e2;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  font-family: ligth;
+
+  &:focus {
+    stroke-width: 4px;
+    stroke: rgba(16, 71, 137, 0.3);
+  }
+  &:disabled {
+    border-radius: 10px;
+    border: 1px solid #d9d9d9;
+    background: rgba(241, 241, 241, 0.4);
+  }
+
+  &.is-invalid {
+    border-radius: 10px;
+    border: 1px solid #e74c3c !important;
+    background: rgba(231, 76, 60, 0.11);
+  }
+  &[readonly] {
+    border-radius: 10px;
+    background-color: #f6f6f6;
+    border: none;
+  }
+}
+
+.form-select {
+  min-height: 45px;
+  border-radius: 10px;
+  border: 1px solid #e2e2e2;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  font-family: ligth;
+}
+
+.card_address {
+  border-radius: 18px;
+  border: 1px solid #949494;
+  background: #fff;
+}
+
+h5 ,h6 {
+  font-family: bold_font;
+
+}
+div:where(.swal2-container) .swal2-html-container {
+  z-index: 1;
+  justify-content: center;
+  margin: 1em 1.6em 0.3em;
+  padding: 0;
+  overflow: auto;
+  font-size: 1.125em;
+  font-weight: normal;
+  line-height: normal;
+  text-align: center;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-family: 'bold_font';
+  color: #411a1a !important;
+}
+div:where(.swal2-container).swal2-center>.swal2-popup {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+  background: white;
+  width: 225px;
+
+}
+
+.text-danger{
+  font-family: 'bold_font';
+
+}
+h5, h6 {
+  font-family: bold_font;
+  color: #831539;
+}
+
+.google_login{
+  font-family: ligth !important;
+
+}
+
+
+.text-red {
+  font-family: bold_font;
+  color: #831539;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+  p{
+    font-size: 15px;
+  }
+  h5{
+    font-size: 16px;
+
+  }
+}
+
+::ng-deep .ant-message-notice-content {
+  direction: ltr !important;
+  font-family: ligth;
+}
+
+
+
+
+

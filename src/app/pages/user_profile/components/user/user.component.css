@@ -1,0 +1,24 @@
+.border-left{
+  border-left: 3px solid #ebddc25c;
+}
+
+.check_user{
+color: #831539;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-decoration-line: underline;
+}
+::ng-deep .ant-spin-dot-item {
+  position: absolute;
+  display: block;
+  width: 9px;
+  height: 9px;
+  background-color: #841238;
+  border-radius: 100%;
+  transform: scale(0.75);
+  transform-origin: 50% 50%;
+  opacity: 0.3;
+  animation: antSpinMove 1s infinite linear alternate;
+}

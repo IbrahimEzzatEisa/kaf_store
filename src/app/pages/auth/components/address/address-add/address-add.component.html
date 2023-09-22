@@ -1,0 +1,125 @@
+<section>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <h5> {{'forms.Add_address'|translate }}</h5>
+        <form (ngSubmit)="onSubmitregister()" #registerForm="ngForm" novalidate class="tooltip-left-bottom">
+          <div class="row justify-content-center mt-2">
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="form-label">   {{'forms.name'|translate }}  </label>
+                <input type="text" class="form-control "
+                 #full_name="ngModel"
+                 ngModel maxlength="400" [(ngModel)]="address.full_name"name="full_name"
+                 [ngClass]="{'is-invalid': full_name?.errors && registerForm.submitted }"  required>
+                <div *ngIf="full_name?.errors?.required && registerForm.submitted" class="invalid-feedback"> {{'forms.field_is_required'|translate }} </div>
+            </div>
+
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label">  {{'forms.phone_number'|translate }}   </label>
+                  <input type="text" class="form-control "
+                   #phone="ngModel"
+                   ngModel maxlength="400" [(ngModel)]="address.phone"  name="phone"
+                   [ngClass]="{'is-invalid': phone?.errors && registerForm.submitted }"  required>
+                  <div *ngIf="phone?.errors?.required && registerForm.submitted" class="invalid-feedback"> {{'forms.field_is_required'|translate }} </div>
+              </div>
+              </div>
+
+              <div class="col-md-12 mt-3 mb-3">
+                <div class="form-group">
+              <nz-radio-group [(ngModel)]="address.type" [ngModelOptions]="{standalone: true}">
+                <label nz-radio nzValue="home"> {{'forms.house'|translate }}
+                </label>
+                <label nz-radio nzValue="company">
+                  {{'forms.company_'|translate }}
+                </label>
+              </nz-radio-group>
+              </div>
+              </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label class="form-label">  {{'forms.city'|translate }}  </label>
+                    <select class="form-select" (change)="selectCity($event)">
+                      <option [selected] value="" > {{'forms.city_Select'|translate }} </option>
+                     <option *ngFor="let status of city_list" [value]="status.id" >{{status.name}}</option>
+                   </select>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label class="form-label">   {{'forms.district'|translate }}  </label>
+                    <input type="text" class="form-control "
+                     #district="ngModel"
+                     ngModel maxlength="400" [(ngModel)]="address.district"  name="district"
+                     [ngClass]="{'is-invalid': district?.errors && registerForm.submitted }" required>
+                    <div *ngIf="district?.errors?.required && registerForm.submitted" class="invalid-feedback"> {{'forms.field_is_required'|translate }} </div>
+                  </div>
+                </div>
+
+
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label class="form-label">   {{'forms.building_number'|translate }} </label>
+                  <input type="text" class="form-control "
+                   #building_number="ngModel"
+                   ngModel maxlength="400" [(ngModel)]="address.building_number"  name="building_number"
+                   [ngClass]="{'is-invalid': building_number?.errors && registerForm.submitted }" required>
+                  <div *ngIf="building_number?.errors?.required && registerForm.submitted" class="invalid-feedback"> {{'forms.field_is_required'|translate }} </div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label class="form-label">  {{'forms.floor_number'|translate }} </label>
+                  <input type="text" class="form-control "
+                    maxlength="400" [(ngModel)]="address.floor_number"name="floor_number">
+                </div>
+                 </div>
+                 <div class="col-md-3">
+                  <div class="form-group">
+                    <label class="form-label">  {{'forms.postal_code'|translate }}</label>
+                    <input type="text" class="form-control "
+                     #postal_code="ngModel"
+                     ngModel maxlength="400" [(ngModel)]="address.postal_code"name="postal_code"
+                     [ngClass]="{'is-invalid': postal_code?.errors && registerForm.submitted }" required>
+                    <div *ngIf="postal_code?.errors?.required && registerForm.submitted" class="invalid-feedback"> {{'forms.field_is_required'|translate }} </div>
+                  </div>
+                 </div>
+
+                 <div class="col-md-9">
+                  <div class="form-group">
+                    <label class="form-label"> {{'forms.full_address'|translate }} </label>
+                    <input type="text" class="form-control "
+                      maxlength="400" [(ngModel)]="address.full_address"name="full_address">
+                </div>
+                </div>
+                <div class="col-md-12 mt-2 ">
+                  <nz-switch [(ngModel)]="address.is_default" [ngModelOptions]="{standalone: true}" ></nz-switch>
+                  <label class="form-label mr-3">   {{'forms.main_address'|translate }} </label>
+                </div>
+
+         </div>
+
+         <div class="row justify-content-center mt-3 mb-5">
+           <div class="col-md-4 d-flex text-center">
+         <button type="submit"  class="btn btn-primary btn-block mr-2"  >
+          {{'forms.Add_address'|translate }}
+         </button>
+
+         <button type="button"  class="btn btn-secondary btn-block mr-2"  (click)="AllAddress()" >
+          {{'cart.address'|translate }}
+       </button>
+        </div>
+        </div>
+         </form>
+      </div>
+    </div>
+  </div>
+</section>

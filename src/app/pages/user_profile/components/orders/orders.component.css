@@ -1,0 +1,45 @@
+.total_card {
+
+  border-radius: 14px;
+  border: 1px solid #949494;
+  background: #F4F4F4;
+}
+
+h6 {
+  color: #372012;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.status {
+  border-radius: 100px;
+  background: #54BD77;
+  min-width: 108.759px;
+  height: 38px;
+  padding: 8px;
+
+
+}
+
+.unprimary{
+  border-radius: 100px;
+  background: #ecdec3;
+  min-width: 108.759px;
+  height: 38px;
+  padding: 8px;
+  color: #831539 !important;
+
+}
+::ng-deep .ant-spin-dot-item {
+  position: absolute;
+  display: block;
+  width: 9px;
+  height: 9px;
+  background-color: #841238;
+  border-radius: 100%;
+  transform: scale(0.75);
+  transform-origin: 50% 50%;
+  opacity: 0.3;
+  animation: antSpinMove 1s infinite linear alternate;
+}

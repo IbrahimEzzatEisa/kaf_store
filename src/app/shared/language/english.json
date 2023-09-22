@@ -1,0 +1,28 @@
+{
+
+    "NavbarHome": "Home",
+    "navbarCompany": "Company",
+    "NavbarServices": "Services",
+    "NavbarProjects": "Projects",
+    "NavbarPrtners": "Our Partners",
+    "NavbarNews": "News",
+    "NavbarContact": " Contact Us",
+    "navbar": [{
+            "name": "About Company ",
+            "Router": "/company/about-company"
+        },
+        {
+            "name": "Our Factory ",
+            "Router": "/company/our-factory"
+        },
+        {
+            "name": "Board Of Directors  ",
+            "Router": "/company/board-of-directors"
+        },
+        {
+            "name": "Investor Relations  ",
+            "Router": "/company/investor-relations"
+        }
+
+    ]
+}

@@ -1,0 +1,81 @@
+p{
+  color: #000;
+text-align: right;
+font-family: Ping AR + LT;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 37px; /* 185% */
+}
+
+
+h3 {
+  color: #831539;
+font-family: Ping AR + LT;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+}
+
+
+li{
+color: #372012;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.card{
+  border-radius: 18px;
+border: 1px solid rgba(112, 103, 99, 0.30);
+background: #FCFAFB;
+min-width: 300px;
+max-height: 441px;
+min-height: 400px;
+flex-shrink: 0;
+text-align: center;
+
+.like {
+  position: absolute;
+  left: 0;
+  margin: 5px;
+}
+img {
+
+width: 132px;
+height: 216px;
+margin-top: 40px;
+}
+.lead{
+  color: #706763;
+  text-align: center;
+  font-family: Ping AR + LT;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.price {
+  color: #831539;
+  text-align: center;
+  font-family: Ping AR + LT;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+.btn-kaf{
+  border-radius: 8px;
+  background: #831539;
+  color: wheat;
+  color: #FFF;
+font-family: Ping AR + LT;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+width: 165px;
+height: 45px;
+}
+}
+

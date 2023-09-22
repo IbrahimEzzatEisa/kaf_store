@@ -1,0 +1,97 @@
+<section class="mt-2 mb-4">
+  <nz-spin [nzSpinning]="isSpinning">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <form (ngSubmit)="onSubmitregister()" #registerForm="ngForm" novalidate class="tooltip-left-bottom">
+          <div class="row justify-content-center">
+             <div class="col-md-12">
+              <h5> {{'menu.hello'|translate }}  </h5>
+              <p> {{'forms.You_can_easily_create_an_account_now'|translate }} </p>
+
+              <div class="d-flex justify-content-center flex-wrap align-items-center mb-1 google">
+                <label class="from-label text-center">  {{'menu.login_With_google'|translate }} </label>
+                 </div>
+                <div class="d-flex justify-content-center flex-wrap align-items-center mb-3 google">
+                   <label class="mb-3 google_login"> </label>
+                  <div class="mb-3">
+                      <asl-google-signin-button type="standard"
+                       text="signin_with"    size="large">
+                      </asl-google-signin-button>
+                  </div>
+              </div>
+
+               <div class="form-group">
+                <label class="form-label">   {{'forms.name'|translate }} </label>
+                 <input type="text" class="form-control "
+                  #name="ngModel" name="name"
+                  ngModel maxlength="400" [(ngModel)]="register.name"
+                  [ngClass]="{'is-invalid': name?.errors && registerForm.submitted }" required>
+                  <div *ngIf="name?.errors?.required && registerForm.submitted" class="invalid-feedback">  {{'forms.field_is_required'|translate }}</div>
+                </div>
+
+              <div class="form-group">
+                <label class="form-label">   {{'forms.phone_number'|translate }} </label>
+                <input type="text" class="form-control" name="mobileNumber" ngModel required #mobileNumber="ngModel" minlength="9" maxlength="12" pattern="[0-9]*" [(ngModel)]="register.phone"
+                [ngClass]="{'is-invalid': mobileNumber?.errors && registerForm.submitted }">
+                <div *ngIf="mobileNumber?.errors?.required && registerForm.submitted" class="invalid-feedback">  {{'forms.field_is_required'|translate }}</div>
+                <div *ngIf="mobileNumber?.errors?.pattern && registerForm.submitted" class="invalid-feedback">{{'forms.enter_in_the_correct_format'|translate }} </div>
+                <div *ngIf="!mobileNumber?.errors?.pattern && mobileNumber?.errors?.maxlength && registerForm.submitted" class="invalid-feedback">{{'forms.phone_max'|translate }}</div>
+                <div *ngIf="!mobileNumber?.errors?.pattern && mobileNumber?.errors?.minLength&& registerForm.submitted" class="invalid-feedback">{{'forms.phone_min'|translate }}</div>
+           </div>
+
+           <div class="form-group">
+              <label class="form-label"> {{'forms.email'|translate }}</label>
+              <input type="text" class="form-control" name="email" ngModel required #email="ngModel" maxlength="150" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" email [(ngModel)]="register.email"
+              [ngClass]="{'is-invalid': email?.errors && registerForm.submitted }" >
+              <div *ngIf="email?.errors?.required && registerForm.submitted" class="invalid-feedback"> {{'forms.field_is_required'|translate }} </div>
+              <div *ngIf="email?.errors?.pattern && registerForm.submitted" class="invalid-feedback"> {{'forms.enter_in_the_correct_format'|translate }} </div>
+         </div>
+
+         <div class="form-group">
+          <label class="form-label">   {{'forms.password'|translate }} </label>
+          <br>
+           <p-password ngModel #password="ngModel" name="password"
+           class="w-100" password ngModel name="password"
+           [ngClass]="{'ng-invalid ng-dirty': !password.valid && registerForm.submitted ,'ng-valid':password.valid }"
+           [(ngModel)]="register.password"
+           required ngModel [toggleMask]="true" [feedback]="false"></p-password>
+
+          <div *ngIf="!password.valid && registerForm.submitted"
+           class="invalid-feepassword_confirmationdback">  {{'forms.field_is_required'|translate }}
+          </div>
+        </div>
+        <div class="form-group">
+         <label class="form-label">  {{'forms.password_confirmation'|translate }} </label>
+         <br>
+         <p-password ngModel #password_confirmation="ngModel" name="password_confirmation"
+         class="w-100" password_confirmation ngModel name="password_confirmation"
+         [ngClass]="{'ng-invalid ng-dirty': !password_confirmation.valid && registerForm.submitted ,'ng-valid':password_confirmation.valid }"
+         [(ngModel)]="register.password_confirmation"
+         required ngModel [toggleMask]="true" [feedback]="false"></p-password>
+        <div *ngIf="!password.valid && registerForm.submitted"
+         class="invalid-feepassword_confirmationdback">  {{'forms.field_is_required'|translate }}
+        </div>
+         </div>
+
+             </div>
+         </div>
+
+         <div class="row justify-content-center mt-3">
+           <div class="col-md-12 d-flex text-center">
+         <button type="submit"  class="btn btn-primary btn-block"  >
+          {{'forms.register'|translate }}
+         </button>
+        </div>
+        </div>
+
+        <div class="row text-start mt-2">
+         <a (click)="login()" class="check_user">   {{'forms.do_you_have_account'|translate }} : <strong>  {{'forms.login'|translate }}</strong></a>
+        </div>
+
+         </form>
+      </div>
+    </div>
+  </div>
+  </nz-spin>
+</section>

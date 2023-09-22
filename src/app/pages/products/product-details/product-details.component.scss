@@ -1,0 +1,28 @@
+@import '../product-list/product-list.component.scss';
+
+::ng-deep .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  background: #ffffff;
+  border-color: #831539;
+  color: #831539;
+  border-bottom: 4px solid #831539;
+}
+
+.img-related{
+  margin-top: 5px;
+  width: 75px;
+  height: 75px;
+  border-radius: 8px;
+  border: 1px solid #d4d1d0;
+  padding: 2px;
+  margin-right: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+
+  img{
+    width: 68px;
+    height: 68px;
+    cursor: pointer;
+  }
+}
+
+

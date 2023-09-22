@@ -1,0 +1,35 @@
+.page-item.active .page-link {
+  /* background: #145388 !important;
+  border: none !important;
+  color: white !important; */
+  color: #831539;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: underline;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: bold_font;
+}
+
+
+.page-item .page-link {
+ color: #946d22;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: bold_font;
+}
+
+
+.page-item.disabled-btn .page-link {
+  border: none !important;
+  color: white !important;
+  cursor: no-drop;
+}
