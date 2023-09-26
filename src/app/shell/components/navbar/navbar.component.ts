@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit, DoCheck {
   // products
   product_list: Products[] = [];
 
-   // form and modal data
+  // form and modal data
   @ViewChild('FinsihForm') FinsihForm: NgForm;
   @ViewChild('registerForm') registerForm: NgForm;
   @ViewChild('lgModalcancell') lgModalcancell: ModalDirective;
@@ -62,7 +62,7 @@ export class NavbarComponent implements OnInit, DoCheck {
   token: string;
 
   // login
-  login_soical:LoginSoical = new LoginSoical();
+  login_soical: LoginSoical = new LoginSoical();
 
   // inject
   constructor(
@@ -80,11 +80,7 @@ export class NavbarComponent implements OnInit, DoCheck {
 
   ngOnInit(): void {
 
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationStart) {
-        this.spinner.show();
-      }
-    });
+
     this.cart_List = JSON.parse(localStorage.getItem('kaf_cart') || '[]');
     this.current_user = JSON.parse(localStorage.getItem('Kaf-user') || '[]');
 
@@ -93,17 +89,17 @@ export class NavbarComponent implements OnInit, DoCheck {
       this.login_soical.email = this.socialUser.email;
       this.login_soical.name = this.socialUser.name;
       this.login_soical.token = this.socialUser.idToken;
-      this.AuthService.loginUserGoogle(this.login_soical).subscribe((res:any) => {
+      this.AuthService.loginUserGoogle(this.login_soical).subscribe((res: any) => {
         localStorage.setItem('Kaf-token', String(res.auth_data.access_token))
         localStorage.setItem('Kaf-user', JSON.stringify(res))
         this.lgModalcancell.hide();
 
-        this.x= res.message;
+        this.x = res.message;
         this.message = res.errors;
         const phoneNumber = res.phone;
         if (phoneNumber.trim() === '') {
-            let data = 'google'
-            this.router.navigate([`/auth/verfiy-otp/${res.email}/${data}`])
+          let data = 'google'
+          this.router.navigate([`/auth/verfiy-otp/${res.email}/${data}`])
         } else {
           window.location.assign(`/home`)
 
@@ -123,7 +119,7 @@ export class NavbarComponent implements OnInit, DoCheck {
           this.router.navigate([`/product`])
           window.location.reload()
           this.lgModalcancell.hide();
-            ;
+          ;
           this.registerForm.resetForm();
         }
       )
@@ -132,7 +128,8 @@ export class NavbarComponent implements OnInit, DoCheck {
 
   // open auth modal
   openAuth() {
-    this.lgModalcancell.show()
+    this.lgModalcancell.show();
+    this.closeMenu()
   }
 
 
@@ -172,7 +169,7 @@ export class NavbarComponent implements OnInit, DoCheck {
   }
 
   // select product search details
-  select(id , $event) {
+  select(id, $event) {
     this.model_search.search_key = "";
     this.product_list = []
     this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
@@ -236,12 +233,10 @@ export class NavbarComponent implements OnInit, DoCheck {
   }
 
 
-  closeMenu(){
-            this.spinner.show();
-            setTimeout(() => {
-              let checkbox: any = document.getElementById("menuToggle");
-              checkbox.checked = false; // it returns Boolean value
-            }, 10);
+  closeMenu() {
+
+    let checkbox: any = document.getElementById("menuToggle");
+    checkbox.checked = false; // it returns Boolean value
 
 
   }

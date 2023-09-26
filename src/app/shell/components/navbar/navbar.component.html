@@ -95,7 +95,6 @@
               <li class="nav-tab" [routerLinkActive]="['active']" (click)="closeMenu()"  [routerLink]="['/home']">  {{'menu.home'|translate }}  </li>
               <li class="nav-tab" [routerLinkActive]="['active']" (click)="closeMenu()"  [routerLink]="['/about-kaf']"> {{'menu.about_us'|translate }}</li>
               <li class="nav-tab" [routerLinkActive]="['active']"(click)="closeMenu()"   [routerLink]="['/help-center']"  > {{'menu.contact'|translate }}</li>
-
               <li class="nav-tab" [routerLinkActive]="['active']"(click)="closeMenu()"   [routerLink]="['/terms-conditions']"  >{{'menu.terms_condition'|translate }} </li>
               <li class="nav-tab" (click)="closeMenu()" [routerLinkActive]="['active']" [routerLink]="['/product']">{{'menu.store'|translate }}</li>
               <li class="nav-tab" [routerLinkActive]="['active']"(click)="closeMenu()"   [routerLink]="['/contact-us']"  > {{'menu.conatct_link'|translate }}</li>
@@ -126,7 +125,7 @@
             </svg>
             </a>
 
-            <a class="icon-navb" (click)="openAuth()" *ngIf="!current_user.name" (click)="closeMenu()" >
+            <a class="icon-navb" (click)="openAuth()" *ngIf="!current_user.name"  >
               <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="21" cy="21" r="21" fill="#831539"/>
                 <path d="M30.9872 27.0352C29.7763 24.076 27.4753 21.8566 24.69 20.7469C26.2644 19.514 27.2332 17.5411 27.2332 15.4451C27.2332 11.4995 24.2056 8.41699 20.4514 8.41699C16.6973 8.41699 13.6698 11.4995 13.6698 15.3218C13.6698 17.4178 14.6386 19.3906 16.2129 20.6236C13.4276 21.7333 11.1267 23.9527 9.91564 26.9119C9.43123 28.1448 9.55234 29.6244 10.279 30.7342C11.0056 31.9672 12.3377 32.5837 13.7909 32.5837H27.2332C28.6863 32.5837 29.8975 31.8439 30.7451 30.7342C31.4717 29.6244 31.5929 28.2682 30.9872 27.0352ZM16.0918 15.3218C16.0918 12.8558 18.0294 10.883 20.4514 10.883C22.8735 10.883 24.8111 12.8558 24.8111 15.3218C24.8111 17.7877 22.8735 19.7606 20.4514 19.7606C18.0294 19.7606 16.0918 17.7877 16.0918 15.3218ZM28.6863 29.5012C28.3231 29.9943 27.8387 30.3643 27.2332 30.3643H13.6698C13.0643 30.3643 12.5799 30.1177 12.2166 29.5012C11.8533 29.008 11.8533 28.5148 12.0955 28.0216C13.5487 24.4459 16.8184 22.2266 20.4514 22.2266C24.0845 22.2266 27.3543 24.4459 28.8075 27.8982C29.0497 28.3915 28.9286 29.008 28.6863 29.5012Z" fill="white"/>

@@ -31,8 +31,8 @@ export class PaymentComponent implements OnInit {
 
     // get url
     this.route.params.subscribe(params => {
-      const dataUrl = params['dataUrl'];
-      this.url = this.sanitizer.bypassSecurityTrustResourceUrl("https://payments.urway-tech.com/URWAYPGService/direct.jsp?paymentid="+dataUrl);
+      let  dataUrl = params['dataUrl'];
+      this.url = this.sanitizer.bypassSecurityTrustResourceUrl("https://payments.urway-tech.com/URWAYPGService/direct.jsp?paymentid="+`${dataUrl}`);
     });
 
 

@@ -84,37 +84,21 @@ export class AppComponent  implements OnInit {
 
     this.route.events.pipe(filter(event => event instanceof NavigationEnd),).subscribe(
       () => {
-        this.spinner.show();
-        setTimeout(() => {
-          this.spinner.hide();
-          window.scrollTo(0,0);
-
-          this.up()
-
         this.up()
         var rt = this.getChild(this.router)
         rt.data.subscribe(data => {
           this.titleService.setTitle(data.title)
-
         })
 
           window.scrollTo({ top: 0, behavior: 'smooth' });
-
-        }, 2100);
-
-
-
-
       }
     )
-
 
     // config translations
     this.translationService.loadTranslations(
       enLang,
       arLang,
     );
-
 
 
     if (localStorage.getItem('lang')) {

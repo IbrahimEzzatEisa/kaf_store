@@ -108,7 +108,7 @@ export class OrdersComponent implements OnInit {
     this.isSpinning = true
     this.subscription_Service.repayOrder(id).subscribe(
       res => {
-        let newText = res.payment_url.replace('https://payments-dev.urway-tech.com/URWAYPGService/direct.jsp?paymentid=', '');
+        let newText = res.payment_url.replace('https://payments.urway-tech.com/URWAYPGService/direct.jsp?paymentid=', '');
         this.router.navigate([`/product/payment/${newText}`])
         this.isSpinning = false
       }, err => {

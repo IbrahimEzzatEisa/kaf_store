@@ -243,7 +243,7 @@ export class Complete_orderComponent implements OnInit {
       this.cart_List.map((item) => {
         let body = {
           "product_id": item.id,
-          "quantity": item.quantity,
+          "quantity": item.qty,
         }
 
         this.final_Product.push(Object.assign(body))
@@ -262,7 +262,7 @@ export class Complete_orderComponent implements OnInit {
           if (res.payment_url != null) {
             localStorage.removeItem('kaf_cart');
             this.isSpinning = false
-            let newText = res.payment_url.replace('https://payments-dev.urway-tech.com/URWAYPGService/direct.jsp?paymentid=', '');
+            let newText = res.payment_url.replace('https://payments.urway-tech.com/URWAYPGService/direct.jsp?paymentid=', '');
             this.router.navigate([`/product/payment/${newText}`])
             //  localStorage.
           } else {
