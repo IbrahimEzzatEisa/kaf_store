@@ -156,6 +156,8 @@ export const locale = {
   mahsel:"Crops",
   envlopes:"Envelopes",
   Cups:"Cups",
+  other:"Other",
+
   sortBy:" sort by  ",
   old:" From oldest to newest ",
   new:"From newest to oldest",

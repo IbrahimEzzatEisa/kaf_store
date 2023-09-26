@@ -56,6 +56,13 @@
               [nzDisabled]="true" [nzShowArrow]="false" nzHeader=" {{'products_kaf.Cups'|translate }}">
               </nz-collapse-panel>
             </nz-collapse>
+
+            <nz-collapse nzAccordion>
+              <nz-collapse-panel  [ngClass]="{'text-active': selected_other_id }" (click)="SelectOther()"
+              [nzDisabled]="true" [nzShowArrow]="false" nzHeader=" {{'products_kaf.other'|translate }}">
+              </nz-collapse-panel>
+            </nz-collapse>
+
           </div>
         </div>
       </div>

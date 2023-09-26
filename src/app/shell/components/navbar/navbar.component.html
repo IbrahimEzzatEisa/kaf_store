@@ -94,9 +94,10 @@
           <ul class="nav-tabs">
               <li class="nav-tab" [routerLinkActive]="['active']" (click)="closeMenu()"  [routerLink]="['/home']">  {{'menu.home'|translate }}  </li>
               <li class="nav-tab" [routerLinkActive]="['active']" (click)="closeMenu()"  [routerLink]="['/about-kaf']"> {{'menu.about_us'|translate }}</li>
+              <li class="nav-tab" (click)="closeMenu()" [routerLinkActive]="['active']" [routerLink]="['/product']">{{'menu.store'|translate }}</li>
+
               <li class="nav-tab" [routerLinkActive]="['active']"(click)="closeMenu()"   [routerLink]="['/help-center']"  > {{'menu.contact'|translate }}</li>
               <li class="nav-tab" [routerLinkActive]="['active']"(click)="closeMenu()"   [routerLink]="['/terms-conditions']"  >{{'menu.terms_condition'|translate }} </li>
-              <li class="nav-tab" (click)="closeMenu()" [routerLinkActive]="['active']" [routerLink]="['/product']">{{'menu.store'|translate }}</li>
               <li class="nav-tab" [routerLinkActive]="['active']"(click)="closeMenu()"   [routerLink]="['/contact-us']"  > {{'menu.conatct_link'|translate }}</li>
 
         <a class="icon-navb"*ngIf="current_user.name">

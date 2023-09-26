@@ -38,6 +38,7 @@ export class ProductListComponent implements OnInit {
   selected_id;
   selected_env_id;
   selected_cups_id
+  selected_other_id;
   cart_List: Products[] = [];
 
   // isSpinning
@@ -219,6 +220,7 @@ export class ProductListComponent implements OnInit {
     this.filterParams.type = "crop";
     this.selected_env_id = false;
     this.selected_cups_id = false;
+    this.selected_other_id = false
     this.filterParams.pageNumber = 1
     this.getProducts()
   }
@@ -230,6 +232,7 @@ export class ProductListComponent implements OnInit {
     this.filterParams.type_id = "";
     this.selected_env_id = true;
     this.selected_cups_id = false;
+    this.selected_other_id = false
     this.filterParams.pageNumber = 1
     this.getProducts()
   }
@@ -237,7 +240,9 @@ export class ProductListComponent implements OnInit {
   SelectCups() {
     this.selected_id = 0;
     this.selected_env_id = 0
-    this.selected_cups_id = true
+    this.selected_cups_id = true;
+    this.selected_other_id = false
+    this.selected_env_id = false
     this.filterParams.type = "cup";
     this.filterParams.type_id = "";
     this.filterParams.pageNumber = 1
@@ -245,6 +250,17 @@ export class ProductListComponent implements OnInit {
 
   }
 
+  SelectOther(){
+    this.selected_id = 0;
+    this.selected_env_id = 0;
+    this.selected_other_id = true;
+    this.selected_cups_id = false;
+    this.selected_env_id = false
+    this.filterParams.type = "other";
+    this.filterParams.type_id = "";
+    this.filterParams.pageNumber = 1
+    this.getProducts()
+  }
 
   // sort()
   sort(data) {

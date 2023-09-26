@@ -184,6 +184,7 @@ export const locale = {
  products_kaf: {
   mahsel:"المحاصيل",
   envlopes:"الأظرف",
+  other:"اخرى",
   Cups:"الأكواب",
   sortBy:"ترتيب حسب  ",
   old:" من الأقدم للأحدث ",
